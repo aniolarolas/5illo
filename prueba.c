@@ -105,7 +105,7 @@ int main(){
     printf("\n");
     
 //Cartas por jugador iniciales
-    printf("        ");
+    printf("     ");
     for(i=1;i<10;i++){
         printf("[ %d ]",i);
     }
