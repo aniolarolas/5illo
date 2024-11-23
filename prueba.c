@@ -109,6 +109,9 @@ int main(){
     for(i=1;i<10;i++){
         printf("[ %d ] ",i);
     }
+    for(i=10;i<13;i++){
+        printf("[%d ] ",i);
+    }
     printf("\n");
     printf("J#1: ");
     for(i=0;i<12;i++){
