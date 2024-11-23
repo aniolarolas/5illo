@@ -107,10 +107,10 @@ int main(){
 //Cartas por jugador iniciales
     printf("        ");
     for(i=1;i<10;i++){
-        printf("[ %d ] ",i);
+        printf("[ %d ]",i);
     }
     for(i=10;i<13;i++){
-        printf("[%d ] ",i);
+        printf("[%d ]",i);
     }
     printf("\n");
     printf("J#1: ");
