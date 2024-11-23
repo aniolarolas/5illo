@@ -107,9 +107,9 @@ int main(){
 //Cartas por jugador iniciales
     printf("        ");
     for(i=1;i<10;i++){
-            
-            printf("[ %d ] ",i);
+        printf("[ %d ] ",i);
     }
+    printf("\n");
     printf("J#1: ");
     for(i=0;i<12;i++){
         printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
