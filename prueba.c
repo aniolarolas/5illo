@@ -71,23 +71,29 @@ int main(){
         azar=numero_al_azar(baraja.cantidad_baraja);
         jug1.mano[i]=baraja.cartas[azar];
         for(j = azar; j <baraja.cantidad_baraja; j++){
-            baraja.cartas[j]=baraja.cartas[j+1];}
+            baraja.cartas[j]=baraja.cartas[j+1];
+        }
         baraja.cantidad_baraja--;
         azar=numero_al_azar(baraja.cantidad_baraja);
         jug2.mano[i]=baraja.cartas[azar];
         for(j = azar; j <baraja.cantidad_baraja; j++){
-            baraja.cartas[j]=baraja.cartas[j+1];}
+            baraja.cartas[j]=baraja.cartas[j+1];
+        }
         baraja.cantidad_baraja--;
         azar=numero_al_azar(baraja.cantidad_baraja);
         jug3.mano[i]=baraja.cartas[azar];
         for(j = azar; j <baraja.cantidad_baraja; j++){
-            baraja.cartas[j]=baraja.cartas[j+1];}
+            baraja.cartas[j]=baraja.cartas[j+1];
+        }
         baraja.cantidad_baraja--;
         azar=numero_al_azar(baraja.cantidad_baraja);
         jug4.mano[i]=baraja.cartas[azar];
-        for(j = azar; j <baraja.cantidad_baraja; j++){
-            baraja.cartas[j]=baraja.cartas[j+1];}
-        baraja.cantidad_baraja--;}
+        for(j = azar; j <baraja.cantidad_baraja; j++)
+        {
+            baraja.cartas[j]=baraja.cartas[j+1];
+        }
+        baraja.cantidad_baraja--;
+    }
 
 //Preguntas iniciales
     printf("\n");
@@ -101,19 +107,23 @@ int main(){
 //Cartas por jugador iniciales
     printf("J#1: ");
     for(i=0;i<12;i++){
-        printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);}
+        printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+    }
     printf("\n");
     printf("J#2: ");
     for(i=0;i<12;i++){
-        printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);}
+        printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+    }
     printf("\n");
     printf("J#3: ");
     for(i=0;i<12;i++){
-        printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);}
+        printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+    }
     printf("\n");
     printf("J#4: ");
     for(i=0;i<12;i++){
-        printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);}
+        printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+    }
      printf("\n\n");
 
 //Mostrar tablero inicial
@@ -121,22 +131,22 @@ int main(){
     for(i=0;i<12;i++){
         printf("\n");
         for(j=0;j<4;j++){
-            printf("[%c%c%c]",mesa.tablero[i][j].palo,mesa.tablero[i][j].numero2,mesa.tablero[i][j].numero);}} 
+            printf("[%c%c%c]",mesa.tablero[i][j].palo,mesa.tablero[i][j].numero2,mesa.tablero[i][j].numero);
+        }
+    } 
     printf("\n");
 
 //Extraer carta al azar de la baraja y verificar que se ha sacado correctamente
     k=numero_al_azar(baraja2.cantidad_baraja);
     printf("Se eliminara la carta: [%c%c%c]\n",baraja2.cartas[k].palo,baraja2.cartas[k].numero2,baraja2.cartas[k].numero);
     for(i=k;i<baraja2.cantidad_baraja;i++){
-        baraja2.cartas[i]=baraja2.cartas[i+1];}
+        baraja2.cartas[i]=baraja2.cartas[i+1];
+    }
     baraja2.cantidad_baraja--;
 //Aqui verifico que la carta ha sido eliminada correctamente
     for(i=0;i<baraja2.cantidad_baraja;i++){
-        printf("[%c%c%c]",baraja2.cartas[i].palo,baraja2.cartas[i].numero2,baraja2.cartas[i].numero);}
+        printf("[%c%c%c]",baraja2.cartas[i].palo,baraja2.cartas[i].numero2,baraja2.cartas[i].numero);
+    }
     printf("\n");
-
-
-
-
 
 }
