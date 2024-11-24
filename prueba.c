@@ -117,7 +117,7 @@ printf("¿Quieres ver todas las cartas? [s/n] ");
 scanf("%c%*c",&carta_pregunta);
 printf("\n");
 
-//
+//Muestro las cartas de cada jugador dependiendo de si quiere no no quiere verlas
 if(jug=='S'||jug=='s'){
 		if(carta_pregunta=='S'||carta_pregunta=='s'){
 			printf("     ");
