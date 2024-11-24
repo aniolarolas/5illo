@@ -128,23 +128,107 @@ if(jug=='S'||jug=='s'){
 			printf("\n");
 			printf("J#1: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
-			}
+	if (jug1.mano[i].palo == 'O')
+	        {
+	            printf_color_num(3);//Groc
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	
+	        }
+	        if (jug1.mano[i].palo == 'C')
+	        {
+	            printf_color_num(1);//Vermell
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	        if (jug1.mano[i].palo == 'E')
+	        {
+	            printf_color_num(6);//Blau
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	        if (jug1.mano[i].palo == 'B')
+	        {
+	            printf_color_num(2);//Verd
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	            printf_reset_color();
+	        }}
 			printf("\n");
 			printf("J#2: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
-			}
+		if (jug2.mano[i].palo == 'O')
+		        {
+		            printf_color_num(3);//Groc
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		
+		        }
+		        if (jug2.mano[i].palo == 'C')
+		        {
+		            printf_color_num(1);//Vermell
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		        if (jug2.mano[i].palo == 'E')
+		        {
+		            printf_color_num(6);//Blau
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		        if (jug2.mano[i].palo == 'B')
+		        {
+		            printf_color_num(2);//Verd
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		            printf_reset_color();
+		        }}
 			printf("\n");
 			printf("J#3: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
-			}
+		if (jug3.mano[i].palo == 'O')
+		        {
+		            printf_color_num(3);//Groc
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		
+		        }
+		        if (jug3.mano[i].palo == 'C')
+		        {
+		            printf_color_num(1);//Vermell
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		        if (jug3.mano[i].palo == 'E')
+		        {
+		            printf_color_num(6);//Blau
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		        if (jug3.mano[i].palo == 'B')
+		        {
+		            printf_color_num(2);//Verd
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		            printf_reset_color();
+		        }}
 			printf("\n");
 			printf("J#4: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
-			}
+				if (jug4.mano[i].palo == 'O')
+				        {
+				            printf_color_num(3);//Groc
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				
+				        }
+				        if (jug4.mano[i].palo == 'C')
+				        {
+				            printf_color_num(1);//Vermell
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				        if (jug4.mano[i].palo == 'E')
+				        {
+				            printf_color_num(6);//Blau
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				        if (jug4.mano[i].palo == 'B')
+				        {
+				            printf_color_num(2);//Verd
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				            printf_reset_color();
+				        }}
 			printf("\n\n");
 		}
 		else if(carta_pregunta=='N'||carta_pregunta=='n'){
@@ -158,7 +242,29 @@ if(jug=='S'||jug=='s'){
 			printf("\n");
 			printf("J#1: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+				if (jug1.mano[i].palo == 'O')
+				        {
+				            printf_color_num(3);//Groc
+				            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+				
+				        }
+				        if (jug1.mano[i].palo == 'C')
+				        {
+				            printf_color_num(1);//Vermell
+				            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+				        }
+				        if (jug1.mano[i].palo == 'E')
+				        {
+				            printf_color_num(6);//Blau
+				            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+				        }
+				        if (jug1.mano[i].palo == 'B')
+				        {
+				            printf_color_num(2);//Verd
+				            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+				        }
+				            printf_reset_color();
+			}
 			}
 			printf("\n");
 			printf("J#2: ");
@@ -190,25 +296,109 @@ if(jug=='S'||jug=='s'){
 			printf("\n");
 			printf("J#1: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
-			}
+	if (jug1.mano[i].palo == 'O')
+	        {
+	            printf_color_num(3);//Groc
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	
+	        }
+	        if (jug1.mano[i].palo == 'C')
+	        {
+	            printf_color_num(1);//Vermell
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	        if (jug1.mano[i].palo == 'E')
+	        {
+	            printf_color_num(6);//Blau
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	        if (jug1.mano[i].palo == 'B')
+	        {
+	            printf_color_num(2);//Verd
+	            printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);
+	        }
+	            printf_reset_color();
+	        }}
 			printf("\n");
 			printf("J#2: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
-			}
+		if (jug2.mano[i].palo == 'O')
+		        {
+		            printf_color_num(3);//Groc
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		
+		        }
+		        if (jug2.mano[i].palo == 'C')
+		        {
+		            printf_color_num(1);//Vermell
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		        if (jug2.mano[i].palo == 'E')
+		        {
+		            printf_color_num(6);//Blau
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		        if (jug2.mano[i].palo == 'B')
+		        {
+		            printf_color_num(2);//Verd
+		            printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);
+		        }
+		            printf_reset_color();
+		        }}
 			printf("\n");
 			printf("J#3: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
-			}
+		if (jug3.mano[i].palo == 'O')
+		        {
+		            printf_color_num(3);//Groc
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		
+		        }
+		        if (jug3.mano[i].palo == 'C')
+		        {
+		            printf_color_num(1);//Vermell
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		        if (jug3.mano[i].palo == 'E')
+		        {
+		            printf_color_num(6);//Blau
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		        if (jug3.mano[i].palo == 'B')
+		        {
+		            printf_color_num(2);//Verd
+		            printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);
+		        }
+		            printf_reset_color();
+		        }}
 			printf("\n");
 			printf("J#4: ");
 			for(i=0;i<10;i++){
-				printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
-			}
+				if (jug4.mano[i].palo == 'O')
+				        {
+				            printf_color_num(3);//Groc
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				
+				        }
+				        if (jug4.mano[i].palo == 'C')
+				        {
+				            printf_color_num(1);//Vermell
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				        if (jug4.mano[i].palo == 'E')
+				        {
+				            printf_color_num(6);//Blau
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				        if (jug4.mano[i].palo == 'B')
+				        {
+				            printf_color_num(2);//Verd
+				            printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);
+				        }
+				            printf_reset_color();
+				        }}
 			printf("\n\n");
- 		}
+		}
 		else if(carta_pregunta=='N'||carta_pregunta=='n'){
 			printf("     ");
 			for(i=1;i<10;i++){
@@ -243,7 +433,19 @@ if(jug=='S'||jug=='s'){
 
 
 //Mostrar tablero inicial
-printf("[ORO][COP][ESP][BAS]");
+printf_color_num(3);
+printf("[ORO]");
+
+printf_color_num(1);
+printf("[COP]");
+
+printf_color_num(6);
+printf("[ESP]");
+
+printf_color_num(2);
+printf("[BAS]");
+printf_reset_color();
+
 for(i=0;i<10;i++){
     printf("\n");
     for(j=0;j<4;j++)
