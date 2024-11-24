@@ -1,5 +1,6 @@
 #include "azar.h"
 #include <stdio.h>
+#include "colores.h"
 
 #define MAX 3
 
