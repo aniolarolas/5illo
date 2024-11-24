@@ -61,12 +61,10 @@ int main(){
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}
     },
-    10, // cantidad_filas
-    4   // cantidad_columnas
-};
+    10, 
+    4 };
 
     
-
     t_baraja baraja={{{'O', ' ', '1'}, {'O', ' ', '2'}, {'O', ' ', '3'}, {'O', ' ', '4'}, {'O', ' ', '5'}, {'O', ' ', '6'}, {'O', ' ', '7'},
     {'O', '1', '0'}, {'O', '1', '1'}, {'O', '1', '2'}, {'C', ' ', '1'}, {'C', ' ', '2'}, {'C', ' ', '3'}, {'C', ' ', '4'}, {'C', ' ', '5'}, {'C', ' ', '6'}, {'C', ' ', '7'},
     {'C', '1', '0'}, {'C', '1', '1'}, {'C', '1', '2'}, {'E', ' ', '1'}, {'E', ' ', '2'}, {'E', ' ', '3'}, {'E', ' ', '4'}, {'E', ' ', '5'}, {'E', ' ', '6'}, {'E', ' ', '7'},
@@ -244,32 +242,6 @@ if(jug=='S'||jug=='s'){
 	}
 
 
-
-
-	
-//Cartas por jugador iniciales
-    printf("J#1: ");
-    for(i=0;i<10;i++){
-
-        printf("[%c%c%c]",jug1.mano[i].palo,jug1.mano[i].numero2,jug1.mano[i].numero);}
-        printf("\n");
-    printf("J#2: ");
-    for(i=0;i<10;i++){
-
-        printf("[%c%c%c]",jug2.mano[i].palo,jug2.mano[i].numero2,jug2.mano[i].numero);}
-        printf("\n");
-    printf("J#3: ");
-    for(i=0;i<10;i++){
-
-        printf("[%c%c%c]",jug3.mano[i].palo,jug3.mano[i].numero2,jug3.mano[i].numero);}
-        printf("\n");
-    printf("J#4: ");
-    for(i=0;i<10;i++){
-
-        printf("[%c%c%c]",jug4.mano[i].palo,jug4.mano[i].numero2,jug4.mano[i].numero);}
-        printf("\n\n");
-
-
 //Mostrar tablero inicial
 printf("[ORO][COP][ESP][BAS]");
 for(i=0;i<10;i++){
@@ -280,15 +252,10 @@ printf("\n");
 
 //Extraer carta al azar de la baraja y verificar que se ha sacado correctamente
 k=numero_al_azar(baraja2.cantidad_baraja);
-printf("Se eliminara la carta: [%c%c%c]\n",baraja2.cartas[k].palo,baraja2.cartas[k].numero2,baraja2.cartas[k].numero);
 for(i=k;i<baraja2.cantidad_baraja;i++){
     baraja2.cartas[i]=baraja2.cartas[i+1];
 }
 baraja2.cantidad_baraja--;
-//Aqui verifico que la carta ha sido eliminada correctamente
-for(i=0;i<baraja2.cantidad_baraja;i++){
-    printf("[%c%c%c]",baraja2.cartas[i].palo,baraja2.cartas[i].numero2,baraja2.cartas[i].numero);
-}
 printf("\n");
 
 
