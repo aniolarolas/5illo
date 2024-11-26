@@ -34,16 +34,23 @@ typedef struct {
     t_baraja baraja;         // La baraja que se está utilizando en la partida
     t_mesa mesa;             // La mesa, donde están las cartas jugadas
     t_jugador jugadores[4];  // Hasta 4 jugadores en la partida
-    int turnoActual;         // Índice del jugador actual (0-3)
+    int turno_actual;         // Índice del jugador actual (0-3)
 } t_partida;
 
 int main(){
 
     inicializar_azar();
-    int i,j,azar,k;
+    int i,j,azar,k,pos_encontrado=0;
     char jug,carta_pregunta,carta_eliminada;
+	
 
+	t_partida partida;
     t_jugador jug1,jug2,jug3,jug4;
+	jug1.cantidad_jugador=10;
+	jug2.cantidad_jugador=10;
+	jug3.cantidad_jugador=10;
+	jug4.cantidad_jugador=10;
+	
     t_jugador jug1_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10},
 		  jug2_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10},
 		  jug3_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10},
@@ -55,7 +62,7 @@ int main(){
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
-        {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
+        {{'O', ' ', '5'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
         {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}},
@@ -107,6 +114,39 @@ for(i=0;i<10;i++){
             baraja.cartas[j]=baraja.cartas[j+1];}
     baraja.cantidad_baraja--;}
 
+
+i=0;
+while(i<12 && pos_encontrado==0){
+	if (jug1.mano[i].palo=='O' && jug1.mano[i].numero=='5'){
+		partida.turno_actual=1;
+		pos_encontrado=i;
+
+		for(j=i;j<jug1.cantidad_jugador; j++){
+        jug1.mano[j]=jug1.mano[j+1];}
+		jug1.cantidad_jugador--;
+
+	} else if (jug2.mano[i].palo=='O' && jug2.mano[i].numero=='5'){
+		partida.turno_actual=2;
+		pos_encontrado=i;
+		for(j=i;j<jug2.cantidad_jugador; j++){
+        jug2.mano[j]=jug2.mano[j+1];}
+		jug2.cantidad_jugador--;
+	} else if (jug3.mano[i].palo=='O' && jug3.mano[i].numero=='5'){
+		partida.turno_actual=3;
+		pos_encontrado=i;
+		for(j=i;j<jug3.cantidad_jugador; j++){
+        jug3.mano[j]=jug3.mano[j+1];}
+		jug3.cantidad_jugador--;
+	}else if(jug4.mano[i].palo=='O' && jug4.mano[i].numero=='5'){
+		partida.turno_actual=4;
+		pos_encontrado=i;
+		for(j=i;j<jug4.cantidad_jugador; j++){
+        jug4.mano[j]=jug4.mano[j+1];}
+		jug4.cantidad_jugador--;
+		}
+	i++;
+}
+
 //Preguntas iniciales
 printf("\n");
 printf("¿Hay algun jugador humano? [s/n] ");
@@ -128,7 +168,7 @@ if(jug=='S'||jug=='s'){
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug1.cantidad_jugador;i++){
 			if (jug1.mano[i].palo == 'O')
 			        {
 			            printf_color_num(3);//Groc
@@ -154,7 +194,7 @@ if(jug=='S'||jug=='s'){
 		        }
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug2.cantidad_jugador;i++){
 				if (jug2.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -180,7 +220,7 @@ if(jug=='S'||jug=='s'){
 		        }
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug3.cantidad_jugador;i++){
 				if (jug3.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -206,7 +246,7 @@ if(jug=='S'||jug=='s'){
 		        }
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug4.cantidad_jugador;i++){
 				if (jug4.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -242,7 +282,7 @@ if(jug=='S'||jug=='s'){
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug1.cantidad_jugador;i++){
 				if (jug1.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -268,17 +308,17 @@ if(jug=='S'||jug=='s'){
 			}
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug2.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug2_auxiliar.mano[i].palo,jug2_auxiliar.mano[i].numero2,jug2_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug3.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug3_auxiliar.mano[i].palo,jug3_auxiliar.mano[i].numero2,jug3_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug4.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug4_auxiliar.mano[i].palo,jug4_auxiliar.mano[i].numero2,jug4_auxiliar.mano[i].numero);
 			}
 			printf("\n\n");
@@ -295,7 +335,7 @@ if(jug=='S'||jug=='s'){
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug1.cantidad_jugador;i++){
 				if (jug1.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -321,7 +361,7 @@ if(jug=='S'||jug=='s'){
 	       		 }
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug2.cantidad_jugador;i++){
 				if (jug2.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -347,7 +387,7 @@ if(jug=='S'||jug=='s'){
 		        }
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug3.cantidad_jugador;i++){
 				if (jug3.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -373,7 +413,7 @@ if(jug=='S'||jug=='s'){
 		        }
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug4.cantidad_jugador;i++){
 				if (jug4.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -409,22 +449,22 @@ if(jug=='S'||jug=='s'){
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug1.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug1_auxiliar.mano[i].palo,jug1_auxiliar.mano[i].numero2,jug1_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug2.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug2_auxiliar.mano[i].palo,jug2_auxiliar.mano[i].numero2,jug2_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug3.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug3_auxiliar.mano[i].palo,jug3_auxiliar.mano[i].numero2,jug3_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<10;i++){
+			for(i=0;i<jug4.cantidad_jugador;i++){
 				printf("[%c%c%c]",jug4_auxiliar.mano[i].palo,jug4_auxiliar.mano[i].numero2,jug4_auxiliar.mano[i].numero);
 			}
 			printf("\n\n");
@@ -446,11 +486,15 @@ printf_color_num(2);
 printf("[BAS]");
 printf_reset_color();
 
+
+
 for(i=0;i<10;i++){
     printf("\n");
     for(j=0;j<4;j++)
         printf("[%c%c%c]",mesa.tablero[i][j].palo,mesa.tablero[i][j].numero2,mesa.tablero[i][j].numero);} 
 printf("\n");
+
+
 
 //Extraer carta al azar de la baraja y verificar que se ha sacado correctamente
 k=numero_al_azar(baraja2.cantidad_baraja);
@@ -459,9 +503,4 @@ for(i=k;i<baraja2.cantidad_baraja;i++){
 }
 baraja2.cantidad_baraja--;
 printf("\n");
-
-
-
-
-
 }
