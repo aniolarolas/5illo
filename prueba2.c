@@ -37,7 +37,7 @@ typedef struct {
     int turno_actual;         // Índice del jugador actual (0-3)
 } t_partida;
 
-void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug4, t_jugador jug1_auxiliar,t_jugador jug2_auxiliar,t_jugador jug3_auxiliar,t_jugador jug4_auxiliar,char jug,char carta_pregunta){
+void imprimir_cartas(t_jugador jug[],t_jugador jug[]_auxiliar,char jug,char carta_pregunta){
     int i;
     if(jug=='S'||jug=='s'){
 		if(carta_pregunta=='S'||carta_pregunta=='s'){
@@ -50,7 +50,8 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<jug1.cantidad_jugador;i++){
+			j=1;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 			if (jug1.mano[i].palo == 'O')
 			        {
 			            printf_color_num(3);//Groc
@@ -76,7 +77,8 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 		        }
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<jug2.cantidad_jugador;i++){
+			j=2;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				if (jug2.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -102,7 +104,8 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 		        }
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<jug3.cantidad_jugador;i++){
+			j=3;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				if (jug3.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -128,7 +131,8 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 		        }
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<jug4.cantidad_jugador;i++){
+			j=4;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				if (jug4.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -164,7 +168,8 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 			}
 			printf("\n");
 			printf("J#1: ");
-			for(i=0;i<jug1.cantidad_jugador;i++){
+			j=1;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				if (jug1.mano[i].palo == 'O')
 				        {
 				            printf_color_num(3);//Groc
@@ -190,17 +195,20 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 			}
 			printf("\n");
 			printf("J#2: ");
-			for(i=0;i<jug2.cantidad_jugador;i++){
+			j=2;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				printf("[%c%c%c]",jug2_auxiliar.mano[i].palo,jug2_auxiliar.mano[i].numero2,jug2_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#3: ");
-			for(i=0;i<jug3.cantidad_jugador;i++){
+			j=3;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				printf("[%c%c%c]",jug3_auxiliar.mano[i].palo,jug3_auxiliar.mano[i].numero2,jug3_auxiliar.mano[i].numero);
 			}
 			printf("\n");
 			printf("J#4: ");
-			for(i=0;i<jug4.cantidad_jugador;i++){
+			j=4;
+			for(i=0;i<jug[j].cantidad_jugador;i++){
 				printf("[%c%c%c]",jug4_auxiliar.mano[i].palo,jug4_auxiliar.mano[i].numero2,jug4_auxiliar.mano[i].numero);
 			}
 			printf("\n\n");
