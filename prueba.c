@@ -7,30 +7,6 @@
 
 
 typedef struct {
-    char palo;           // Valor de la carta (1-12)
-    char numero2;
-    char numero;        // Palo de la carta (Oros, Copas, Espadas, Bastos)
-} t_carta;
-
-
-typedef struct {
-    t_carta cartas[40];     // Máximo de 40 cartas en la baraja española
-    int cantidad_baraja;         // Número de cartas en la baraja
-} t_baraja;
-
-
-typedef struct {
-    t_carta mano[10];         // Cartas en la mano del jugador
-    int cantidad_jugador;     // Número de cartas en la mano del jugador
-} t_jugador;
-
-typedef struct {
-    t_carta tablero[10][4];      // Representa las cartas jugadas en el tablero
-    int cantidad_filas,cantidad_columnas;     // Número de cartas en el tablero
-} t_mesa;
-
-
-typedef struct {
     int turno_jug;            //Jug1,Jug2,Jug2,Jug4
     t_baraja baraja;         // La baraja que se está utilizando en la partida
     t_mesa mesa;             // La mesa, donde están las cartas jugadas
@@ -89,34 +65,7 @@ int main(){
     {'B', '1', '0'}, {'B', '1', '1'}, {'B', '1', '2'}},40};
 
 
-
-
-//Repartimos cartas al azar a todos los jugadores
-for(i=0;i<10;i++){
-    azar=numero_al_azar(baraja.cantidad_baraja);
-    jug1.mano[i]=baraja.cartas[azar];
-    for(j = azar; j <baraja.cantidad_baraja; j++){
-        baraja.cartas[j]=baraja.cartas[j+1];}
-    baraja.cantidad_baraja--;
-
-    azar=numero_al_azar(baraja.cantidad_baraja);
-    jug2.mano[i]=baraja.cartas[azar];
-    for(j = azar; j <baraja.cantidad_baraja; j++){
-        baraja.cartas[j]=baraja.cartas[j+1];}
-    baraja.cantidad_baraja--;
-
-    azar=numero_al_azar(baraja.cantidad_baraja);
-    jug3.mano[i]=baraja.cartas[azar];
-    for(j = azar; j <baraja.cantidad_baraja; j++){
-        baraja.cartas[j]=baraja.cartas[j+1];}
-    baraja.cantidad_baraja--;
-
-    azar=numero_al_azar(baraja.cantidad_baraja);
-    jug4.mano[i]=baraja.cartas[azar];
-        for(j = azar; j <baraja.cantidad_baraja; j++){
-            baraja.cartas[j]=baraja.cartas[j+1];}
-    baraja.cantidad_baraja--;}
-
+t_jugador jug1 jug2 jug3 jug4=repartir_cartas(t_jugador jug1, t_jugador jug2,t_jugador jug3,t_jugador jug4,t_baraja baraja)
 
 i=0;
 while(i<12 && pos_encontrado==0){
@@ -207,4 +156,7 @@ for(i=k;i<baraja2.cantidad_baraja;i++){
 }
 baraja2.cantidad_baraja--;
 printf("\n");
+
+
+
 }
