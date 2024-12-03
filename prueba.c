@@ -35,9 +35,8 @@ printf("¿Quieres ver todas las cartas? [s/n] ");
 scanf("%c%*c",&carta_pregunta);
 printf("\n");
 
-//Muestro las cartas de cada jugador dependiendo de si quiere no no quiere verlas
+//Muestro las cartas de cada jugador dependiendo de preguntas iniciales
 imprimir_cartas(jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar,jug,carta_pregunta);
-
 
 //Imprimir tablero
 imprimir_tablero(mesa);
