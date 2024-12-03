@@ -14,7 +14,7 @@ int main(){
 
 	t_partida partida;
 	t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar;
-   	t_mesa mesa;
+   	t_mesa mesa,mesa_auxiliar;
 	t_baraja baraja;
 
 //Inicializaremos la partida(nos da jugadores auxiliares i dimensiones de jugadores)
