@@ -1,21 +1,11 @@
 #ifndef CARTAS_H
 #define	CARTAS_H
 
+#include "estructuras.h"
 
-typedef struct {
-    char palo;           // Valor de la carta (1-12)
-    char numero2;
-    char numero;        // Palo de la carta (Oros, Copas, Espadas, Bastos)
-} t_carta;
-
-
-typedef struct {
-    t_carta mano[10];         // Cartas en la mano del jugador
-    int cantidad_jugador;     // Número de cartas en la mano del jugador
-} t_jugador;
-
+//En esta libreria, se incluyen las funciones de imprimir las cartas y repartilas
  
 void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug4, t_jugador jug1_auxiliar,t_jugador jug2_auxiliar,t_jugador jug3_auxiliar,t_jugador jug4_auxiliar,char jug,char carta_pregunta);
-
+void repartir_cartas(t_jugador *jug1, t_jugador *jug2,t_jugador *jug3,t_jugador *jug4,t_baraja *baraja,t_partida *partida);
 #endif	/* CARTAS_H */
 
