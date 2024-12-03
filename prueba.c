@@ -58,6 +58,67 @@ for(i=k;i<baraja2.cantidad_baraja;i++){
 baraja2.cantidad_baraja--;
 printf("\n");
 
+#include <stdio.h>
+Paritda=SI;
 
+while(Partida==SI){
+	if (turno==1){ //jug1
+	
+		//buscar posibles tirades
+		k=0;
+		tirada_pos=NO;
+		for(i=0;i<4;i++){
+			j=5
+			if(mesa.cartas[i][j].numero=='-'){
+				tirada_pos=SI;
+				pos_tirada=j;
+			}
+			if(tirada_pos==SI){
+				tiradas posibles[k]=mesa_aux[i][j];
+				k++;
+				tirada_pos=NO;
+			}
+			else if(mesa.cartas[i][j].numero=!'-'){
+				tirada_pos=NO;
+				for(j=5;j<mesa.columnas;j++){
+					if(tirada_pos==NO && mesa[i][j].numero=='-'){
+						tirada_pos=SI;
+						pos_tirada=j;
+					}
+				}
+				if(tirada_pos==SI){
+						tiradas posibles[k]=mesa_aux[i][j];
+						k++;
+						tirada_pos=NO;
+				}
+				for(j=5;j>mesa.columnas;j--){
+					if(tirada_pos==NO && mesa[i][j].numero=='-'){
+						tirada_pos=SI;
+						pos_tirada=j;
+					}
+				}
+				if(tirada_pos==SI){
+					tiradas posibles[k]=mesa_aux[i][j];
+					k++;
+					tirada_pos=NO;
+				}
+			}
+		}
+		k=0;
+		for(j=0;j<tiradas_posibles.numero_cartas;i++){
+			for(i=0;i<jug1.numero_cartas;i++){
+				if(jug1.cartas[i]==tirada_posibles[j]){
+					l=k+1;
+					printf("%d.[%c%c%c]",l,jug1.cartas[i].palo,jug1.cartas[i].numero2,jug1.cartas[i].numero);
+					tiradas_escoger.cartas[k]=jug1.cartas[i];
+					k++;
+				}
+			}
+		}
+
+		//case para cada opcion en caso de que sea persona y azar en caso se que sea maquina.
+		turno=turno+1;	
+	}
+}
 
 }
