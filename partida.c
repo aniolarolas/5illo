@@ -4,7 +4,7 @@
 #include "partida.h"
 
 
-void inicializar_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador *jug3,t_jugador *jug4){
+void inicializar_tablero(t_mesa *mesa){
     int i,j;
     // Inicialización del tablero 10x4 directamente sobre el puntero recibido
     for(i = 0; i < 10; i++) {
@@ -19,7 +19,8 @@ void inicializar_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador 
     mesa->tablero[4][0].palo = 'O';
     mesa->tablero[4][0].numero2 = ' ';
     mesa->tablero[4][0].numero = '5';
-
+}
+void imprimir_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador *jug3,t_jugador *jug4){
     printf_color_num(3);
     printf("[ORO]");
     printf_color_num(1);
@@ -50,12 +51,12 @@ void inicializar_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador 
             }
             printf_reset_color();
         }
-    }}
+    }
+}
 
 
 
 void inicializar_partida(t_jugador *jug1,t_jugador *jug2,t_jugador *jug3,t_jugador *jug4,t_jugador *jug1_auxiliar,t_jugador *jug2_auxiliar,t_jugador *jug3_auxiliar,t_jugador *jug4_auxiliar,t_baraja *baraja){
-
     int i,j;
     
     typedef struct {
