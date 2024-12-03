@@ -42,7 +42,7 @@ int main(){
 	inicializar_azar();
 	
 //Definimos las diferentes variables
-	int i,j,azar,k;
+	int i,j,azar,k,Partida,tirada_pos,pos_tirada;
 	char jug,carta_pregunta,carta_eliminada;
 	t_jugador jug1,jug2,jug3,jug4;
 	t_jugador jug1_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10},
@@ -50,8 +50,11 @@ int main(){
 		  jug3_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10},
 		  jug4_auxiliar={{{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'},{'-',' ', '-'}},10};
 	t_mesa mesa={{{{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}, {{'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}, {'-', ' ', '-'}}},10,4};
+		mesa_aux={{{{'O', ' ', '1'}, {'O', ' ', '2'}, {'O', ' ', '3'}, {'O', ' ', '4'}, {'O', ' ', '5'}, {'O', ' ', '6'}, {'O', ' ', '7'}, {'O', '1', '0'}, {'O', '1', '1'}, {'O', '1', '2'},{'C', ' ', '1'}, {'C', ' ', '2'}, {'C', ' ', '3'}, {'C', ' ', '4'}, {'C', ' ', '5'},{'C', ' ', '6'}, {'C', ' ', '7'}, {'C', '1', '0'}, {'C', '1', '1'}, {'C', '1', '2'},{'E', ' ', '1'}, {'E', ' ', '2'}, {'E', ' ', '3'}, {'E', ' ', '4'}, {'E', ' ', '5'}, {'E', ' ', '6'}, {'E', ' ', '7'}, {'E', '1', '0'}, {'E', '1', '1'}, {'E', '1', '2'},{'B', ' ', '1'}, {'B', ' ', '2'}, {'B', ' ', '3'}, {'B', ' ', '4'}, {'B', ' ', '5'}, {'B', ' ', '6'}, {'B', ' ', '7'}, {'B', '1', '0'}, {'B', '1', '1'}, {'B', '1', '2'}}},10,40};
 	t_baraja baraja={{{'O', ' ', '1'}, {'O', ' ', '2'}, {'O', ' ', '3'}, {'O', ' ', '4'}, {'O', ' ', '5'}, {'O', ' ', '6'}, {'O', ' ', '7'}, {'O', '1', '0'}, {'O', '1', '1'}, {'O', '1', '2'}, {'C', ' ', '1'}, {'C', ' ', '2'}, {'C', ' ', '3'}, {'C', ' ', '4'}, {'C', ' ', '5'}, {'C', ' ', '6'}, {'C', ' ', '7'}, {'C', '1', '0'}, {'C', '1', '1'}, {'C', '1', '2'}, {'E', ' ', '1'}, {'E', ' ', '2'}, {'E', ' ', '3'}, {'E', ' ', '4'}, {'E', ' ', '5'}, {'E', ' ', '6'}, {'E', ' ', '7'}, {'E', '1', '0'}, {'E', '1', '1'}, {'E', '1', '2'}, {'B', ' ', '1'}, {'B', ' ', '2'}, {'B', ' ', '3'}, {'B', ' ', '4'}, {'B', ' ', '5'}, {'B', ' ', '6'}, {'B', ' ', '7'}, {'B', '1', '0'}, {'B', '1', '1'}, {'B', '1', '2'}},40},
 		 baraja2={{{'O', ' ', '1'}, {'O', ' ', '2'}, {'O', ' ', '3'}, {'O', ' ', '4'}, {'O', ' ', '5'}, {'O', ' ', '6'}, {'O', ' ', '7'}, {'O', '1', '0'}, {'O', '1', '1'}, {'O', '1', '2'}, {'C', ' ', '1'}, {'C', ' ', '2'}, {'C', ' ', '3'}, {'C', ' ', '4'}, {'C', ' ', '5'}, {'C', ' ', '6'}, {'C', ' ', '7'}, {'C', '1', '0'}, {'C', '1', '1'}, {'C', '1', '2'}, {'E', ' ', '1'}, {'E', ' ', '2'}, {'E', ' ', '3'}, {'E', ' ', '4'}, {'E', ' ', '5'}, {'E', ' ', '6'}, {'E', ' ', '7'}, {'E', '1', '0'}, {'E', '1', '1'}, {'E', '1', '2'}, {'B', ' ', '1'}, {'B', ' ', '2'}, {'B', ' ', '3'}, {'B', ' ', '4'}, {'B', ' ', '5'}, {'B', ' ', '6'}, {'B', ' ', '7'}, {'B', '1', '0'}, {'B', '1', '1'}, {'B', '1', '2'}},40};
+
+
 
 //Repartimos cartas al azar a todos los jugadores
 	for(i=0;i<10;i++){
@@ -226,16 +229,60 @@ int main(){
 	} 
 	printf("\n");
 
-//Extraer carta al azar de la baraja y verificar que se ha sacado correctamente
-	k=numero_al_azar(baraja2.cantidad_baraja);
-	printf("Se eliminara la carta: [%c%c%c]\n",baraja2.cartas[k].palo,baraja2.cartas[k].numero2,baraja2.cartas[k].numero);
-	for(i=k;i<baraja2.cantidad_baraja;i++){
-		baraja2.cartas[i]=baraja2.cartas[i+1];
+	if (turno==1){ //jug1
+	
+		//buscar posibles tirades
+		k=0;
+		tirada_pos=NO;
+		for(i=0;i<4;i++){
+			j=5
+			if(mesa.cartas[i][j].numero=='-'){
+				tirada_pos=SI;
+				pos_tirada=j;
+			}
+			if(tirada_pos==SI){
+				tiradas posibles[k]=mesa_aux[i][j];
+				k++;
+				tirada_pos=NO;
+			}
+			else if(mesa.cartas[i][j].numero=!'-'){
+				tirada_pos=NO;
+				for(j=5;j<mesa.columnas;j++){
+					if(tirada_pos==NO && mesa[i][j].numero=='-'){
+						tirada_pos=SI;
+						pos_tirada=j;
+					}
+				}
+				if(tirada_pos==SI){
+						tiradas posibles[k]=mesa_aux[i][j];
+						k++;
+						tirada_pos=NO;
+				}
+				for(j=5;j>mesa.columnas;j--){
+					if(tirada_pos==NO && mesa[i][j].numero=='-'){
+						tirada_pos=SI;
+						pos_tirada=j;
+					}
+				}
+				if(tirada_pos==SI){
+					tiradas posibles[k]=mesa_aux[i][j];
+					k++;
+					tirada_pos=NO;
+				}
+			}
+		}
+		k=0;
+		for(j=0;j<tiradas_posibles.numero_cartas;i++){
+			for(i=0;i<jug1.numero_cartas;i++){
+				if(jug1.cartas[i]==tirada_posibles[j]){
+					l=k+1;
+					printf("%d.[%c%c%c]",l,jug1.cartas[i].palo,jug1.cartas[i].numero2,jug1.cartas[i].numero);
+					tiradas_escoger.cartas[k]=jug1.cartas[i];
+					k++;
+				}
+			}
+		}
+		//case para cada opcion en caso de que sea persona y azar en caso se que sea maquina.
+		turno=turno+1;	
 	}
-	baraja2.cantidad_baraja--;
-	//Aqui verifico que la carta ha sido eliminada correctamente
-	for(i=0;i<baraja2.cantidad_baraja;i++){
-		printf("[%c%c%c]",baraja2.cartas[i].palo,baraja2.cartas[i].numero2,baraja2.cartas[i].numero);
-	}
-	printf("\n");
 }
