@@ -37,12 +37,12 @@ void imprimir_tablero(t_mesa mesa){
             if (mesa.tablero[i][j].palo == 'O') {
                 printf_color_num(3); // Groc
                 printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
-            } else if (mesa->tablero[i][j].palo == 'C') {
+            } else if (mesa.tablero[i][j].palo == 'C') {
                 printf_color_num(1); // Vermell
                 printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
             } else if (mesa.tablero[i][j].palo == 'E') {
                 printf_color_num(6); // Blau
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
+                printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
             } else if (mesa.tablero[i][j].palo == 'B') {
                 printf_color_num(2); // Verd
                 printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
