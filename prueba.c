@@ -43,7 +43,7 @@ imprimir_tablero(mesa);
 
 paritda=SI;
 while(partida==SI){
-	if (turno==1){ //jug1
+	if (turno==1){ //fer funcio de turno 1 que tingui les funcions dintre
 	
 		//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
