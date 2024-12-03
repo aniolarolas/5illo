@@ -104,7 +104,7 @@ while(Partida==SI){
 				}
 			}
 		}
-		//mirar si el jug te les cartes
+		//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
 		k=0;
 		for(j=0;j<tiradas_posibles.numero_cartas;i++){
 			for(i=0;i<jug.numero_cartas;i++){
