@@ -64,41 +64,41 @@ while(Partida==SI){
 	
 		//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
-		tirada_pos=NO;
+		tirada_posible=NO;
 		for(i=0;i<4;i++){
-			j=5
-			if(mesa.cartas[i][j].numero=='-'){
-				tirada_pos=SI;
-				pos_tirada=j;
+			j=4
+			if(mesa.tablero[i][j].numero=='-'){
+				tirada_posible=SI;
+				posicion_tirada=j;
 			}
 			if(tirada_pos==SI){
-				tiradas posibles[k]=mesa_aux[i][j];
+				tiradas_posibles[k]=mesa_auxiliar[i][j];
 				k++;
-				tirada_pos=NO;
+				tirada_posible=NO;
 			}
-			else if(mesa.cartas[i][j].numero=!'-'){
+			else if(mesa.tablero[i][j].numero=!'-'){
 				tirada_pos=NO;
 				for(j=5;j<mesa.columnas;j++){
 					if(tirada_pos==NO && mesa[i][j].numero=='-'){
-						tirada_pos=SI;
-						pos_tirada=j;
+						tirada_pososible=SI;
+						posicion_tirada=j;
 					}
 				}
-				if(tirada_pos==SI){
-						tiradas posibles[k]=mesa_aux[i][j];
+				if(tirada_posible==SI){
+						tiradas_posibles[k]=mesa_auxiliar[i][j];
 						k++;
-						tirada_pos=NO;
+						tirada_posible=NO;
 				}
 				for(j=5;j>mesa.columnas;j--){
-					if(tirada_pos==NO && mesa[i][j].numero=='-'){
-						tirada_pos=SI;
-						pos_tirada=j;
+					if(tirada_posible==NO && mesa[i][j].numero=='-'){
+						tirada_posible=SI;
+						posicion_tirada=j;
 					}
 				}
-				if(tirada_pos==SI){
-					tiradas posibles[k]=mesa_aux[i][j];
+				if(tirada_posible==SI){
+					tiradas_posibles[k]=mesa_auxiliar[i][j];
 					k++;
-					tirada_pos=NO;
+					tirada_posible=NO;
 				}
 			}
 		}
