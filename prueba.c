@@ -17,10 +17,10 @@ int main(){
    	t_mesa mesa;
     t_baraja baraja;
 
-//Inicializaremos la partida;
+//Inicializaremos la partida(nos da jugadores auxiliares i dimensiones de jugadores)
 inicializar_partida(&jug1, &jug2, &jug3, &jug4, &jug1_auxiliar, &jug2_auxiliar, &jug3_auxiliar, &jug4_auxiliar, &baraja);
 
-//Repartiremos las cartas iniciales a cada jugador
+//Repartiremos las cartas iniciales a cada jugador(nos da jugadores con sus cartas)
 repartir_cartas(&jug1,&jug2,&jug3,&jug4,&baraja,&partida);
 
 //Preguntas iniciales
