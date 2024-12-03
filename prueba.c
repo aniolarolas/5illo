@@ -58,9 +58,7 @@ for(i=k;i<baraja2.cantidad_baraja;i++){
 baraja2.cantidad_baraja--;
 printf("\n");
 
-#include <stdio.h>
 Paritda=SI;
-
 while(Partida==SI){
 	if (turno==1){ //jug1
 	
