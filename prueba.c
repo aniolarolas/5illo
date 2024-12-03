@@ -9,13 +9,13 @@
 int main(){
 
 	inicializar_azar();
-    int i,j,azar,k,pos_encontrado=0;
-    char jug,carta_pregunta,carta_eliminada;
+	int i,j,azar,k,pos_encontrado=0,partida,turno;
+	char jug,carta_pregunta,carta_eliminada;
 
 	t_partida partida;
-    t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar;
+	t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar;
    	t_mesa mesa;
-    t_baraja baraja;
+	t_baraja baraja;
 
 //Inicializaremos la partida(nos da jugadores auxiliares i dimensiones de jugadores)
 inicializar_partida(&jug1, &jug2, &jug3, &jug4, &jug1_auxiliar, &jug2_auxiliar, &jug3_auxiliar, &jug4_auxiliar, &baraja);
@@ -41,8 +41,8 @@ imprimir_cartas(jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,ju
 //Imprimir tablero
 imprimir_tablero(mesa);
 
-Paritda=SI;
-while(Partida==SI){
+paritda=SI;
+while(partida==SI){
 	if (turno==1){ //jug1
 	
 		//buscar posibles tirades (fer funcio de buscar tirada)
