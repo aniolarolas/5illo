@@ -319,3 +319,79 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 }
 	}
 }
+
+void repartir_cartas(t_jugador *jug1, t_jugador *jug2,t_jugador *jug3,t_jugador *jug4,t_baraja *baraja,t_partida *partida){
+    int i,j,azar,pos_encontrado=0;;
+for(i = 0; i < 10; i++) {
+	for (i = 0; i < 10; i++) {
+   
+    azar = numero_al_azar(baraja->cantidad_baraja);
+    jug1->mano[i] = baraja->cartas[azar];
+    for (j = azar; j < baraja->cantidad_baraja - 1; j++) {
+        baraja->cartas[j] = baraja->cartas[j + 1];
+    }baraja->cantidad_baraja--;
+
+    azar = numero_al_azar(baraja->cantidad_baraja);
+    jug2->mano[i] = baraja->cartas[azar];
+    for (j = azar; j < baraja->cantidad_baraja - 1; j++) {
+        baraja->cartas[j] = baraja->cartas[j + 1];
+    }baraja->cantidad_baraja--;
+
+   
+    azar = numero_al_azar(baraja->cantidad_baraja);
+    jug3->mano[i] = baraja->cartas[azar];
+    for (j = azar; j < baraja->cantidad_baraja - 1; j++) {
+        baraja->cartas[j] = baraja->cartas[j + 1];
+    }baraja->cantidad_baraja--;
+
+   
+    azar = numero_al_azar(baraja->cantidad_baraja);
+    jug4->mano[i] = baraja->cartas[azar];
+    for (j = azar; j < baraja->cantidad_baraja - 1; j++) {
+        baraja->cartas[j] = baraja->cartas[j + 1];
+    }baraja->cantidad_baraja--;
+}
+}
+//Buscamos (O 5) y lo colocamos, sabremos tambien quien empieza el turno
+i=0;
+while(i < 10 && pos_encontrado == 0) {
+    if (jug1->mano[i].palo == 'O' && jug1->mano[i].numero == '5') {
+        partida->turno_actual = 1;
+        pos_encontrado = i;
+
+        for (j = i; j < jug1->cantidad_jugador-1; j++) {
+            jug1->mano[j] = jug1->mano[j + 1];
+        }
+        jug1->cantidad_jugador--;
+
+    } else if (jug2->mano[i].palo == 'O' && jug2->mano[i].numero == '5') {
+        partida->turno_actual = 2;
+        pos_encontrado = i;
+        
+        for (j = i; j < jug2->cantidad_jugador-1; j++) {
+            jug2->mano[j] = jug2->mano[j + 1];
+        }
+        jug2->cantidad_jugador--;
+
+    } else if (jug3->mano[i].palo == 'O' && jug3->mano[i].numero == '5') {
+        partida->turno_actual = 3;
+        pos_encontrado = i;
+
+        for (j = i; j < jug3->cantidad_jugador-1; j++) {
+            jug3->mano[j] = jug3->mano[j + 1];
+        }
+        jug3->cantidad_jugador--;
+
+    } else if (jug4->mano[i].palo == 'O' && jug4->mano[i].numero == '5') {
+        partida->turno_actual = 4;
+        pos_encontrado = i;
+
+        for (j = i; j < jug4->cantidad_jugador-1; j++) {
+            jug4->mano[j] = jug4->mano[j + 1];
+        }
+        jug4->cantidad_jugador--;
+    }
+    i++;
+}}
+
+
