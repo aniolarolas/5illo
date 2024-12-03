@@ -20,6 +20,9 @@ int main(){
 //Inicializaremos la partida(nos da jugadores auxiliares i dimensiones de jugadores)
 inicializar_partida(&jug1, &jug2, &jug3, &jug4, &jug1_auxiliar, &jug2_auxiliar, &jug3_auxiliar, &jug4_auxiliar, &baraja);
 
+//Iniciamos tablero(nos da la mesa que iremos modificando)
+inicializar_tablero(&mesa);
+
 //Repartiremos las cartas iniciales a cada jugador(nos da jugadores con sus cartas, quien tiene el oro 5 i quien es el siguiente jugador a tirar)
 repartir_cartas(&jug1,&jug2,&jug3,&jug4,&baraja,&partida);
 
@@ -35,9 +38,6 @@ printf("\n");
 //Muestro las cartas de cada jugador dependiendo de si quiere no no quiere verlas
 imprimir_cartas(jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar,jug,carta_pregunta);
 
-
-//Iniciamos tablero
-inicializar_tablero(&mesa);
 
 //Imprimir tablero
 imprimir_tablero(mesa);
