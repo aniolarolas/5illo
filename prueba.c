@@ -37,7 +37,10 @@ imprimir_cartas(jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,ju
 
 
 //Iniciamos tablero
-inicializar_tablero(&mesa,&jug1,&jug2,&jug3,&jug4);
+inicializar_tablero(&mesa);
+
+//Imprimir tablero
+imprimir_tablero(mesa);
 
 printf("\n");
 
