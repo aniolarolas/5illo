@@ -64,7 +64,7 @@ Paritda=SI;
 while(Partida==SI){
 	if (turno==1){ //jug1
 	
-		//buscar posibles tirades
+		//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
 		tirada_pos=NO;
 		for(i=0;i<4;i++){
@@ -104,12 +104,13 @@ while(Partida==SI){
 				}
 			}
 		}
+		//mirar si el jug te les cartes
 		k=0;
 		for(j=0;j<tiradas_posibles.numero_cartas;i++){
-			for(i=0;i<jug1.numero_cartas;i++){
-				if(jug1.cartas[i]==tirada_posibles[j]){
+			for(i=0;i<jug.numero_cartas;i++){
+				if(jug.cartas[i]==tirada_posibles[j]){
 					l=k+1;
-					printf("%d.[%c%c%c]",l,jug1.cartas[i].palo,jug1.cartas[i].numero2,jug1.cartas[i].numero);
+					printf("%d.[%c%c%c]",l,jug.cartas[i].palo,jug.cartas[i].numero2,jug.cartas[i].numero);
 					tiradas_escoger.cartas[k]=jug1.cartas[i];
 					k++;
 				}
