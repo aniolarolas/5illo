@@ -20,7 +20,7 @@ void inicializar_tablero(t_mesa *mesa){
     mesa->tablero[4][0].numero2 = ' ';
     mesa->tablero[4][0].numero = '5';
 }
-void imprimir_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador *jug3,t_jugador *jug4){
+void imprimir_tablero(t_mesa mesa){
     printf_color_num(3);
     printf("[ORO]");
     printf_color_num(1);
@@ -34,20 +34,20 @@ void imprimir_tablero(t_mesa *mesa,t_jugador *jug1,t_jugador *jug2,t_jugador *ju
     for(i = 0; i < 10; i++) {
         printf("\n");
         for(j = 0; j < 4; j++) {
-            if (mesa->tablero[i][j].palo == 'O') {
+            if (mesa.tablero[i][j].palo == 'O') {
                 printf_color_num(3); // Groc
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa->tablero[i][j].numero2, mesa->tablero[i][j].numero);
+                printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
             } else if (mesa->tablero[i][j].palo == 'C') {
                 printf_color_num(1); // Vermell
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa->tablero[i][j].numero2, mesa->tablero[i][j].numero);
-            } else if (mesa->tablero[i][j].palo == 'E') {
+                printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
+            } else if (mesa.tablero[i][j].palo == 'E') {
                 printf_color_num(6); // Blau
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa->tablero[i][j].numero2, mesa->tablero[i][j].numero);
-            } else if (mesa->tablero[i][j].palo == 'B') {
+                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
+            } else if (mesa.tablero[i][j].palo == 'B') {
                 printf_color_num(2); // Verd
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa->tablero[i][j].numero2, mesa->tablero[i][j].numero);
+                printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
             } else {
-                printf("[%c%c%c]", mesa->tablero[i][j].palo, mesa->tablero[i][j].numero2, mesa->tablero[i][j].numero);
+                printf("[%c%c%c]", mesa.tablero[i][j].palo, mesa.tablero[i][j].numero2, mesa.tablero[i][j].numero);
             }
             printf_reset_color();
         }
