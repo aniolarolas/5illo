@@ -4,7 +4,7 @@
 #include "partida.h"
 
 
-void inicializar_tablero(t_mesa *mesa){
+void inicializar_tablero(t_mesa *mesa,t_mesa *mesa_auxiliar){
     int i,j;
     // Inicialización del tablero 10x4 directamente sobre el puntero recibido
     for(i = 0; i < 10; i++) {
@@ -19,6 +19,7 @@ void inicializar_tablero(t_mesa *mesa){
     mesa->tablero[4][0].palo = 'O';
     mesa->tablero[4][0].numero2 = ' ';
     mesa->tablero[4][0].numero = '5';
+	mesa_auxliliar->
 }
 void imprimir_tablero(t_mesa mesa){
     printf_color_num(3);
