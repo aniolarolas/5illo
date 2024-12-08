@@ -45,8 +45,8 @@ printf("\n");
 Paritda=SI;
 while(Partida==SI){
 	if (turno==1){ //jug1
-		buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles);
-		comparar_cartas_jugador(t_jugador jug1,t_jugador tirades_posibles,t_jugador tiradas_escoger);
+		buscar_tirades_posibles(mesa,mesa_auxiliar,&tiradas_posibles);
+		comparar_cartas_jugador(jug1, tirades_posibles, &tiradas_escoger);
 		turno=turno+1;	
 	}
 }
