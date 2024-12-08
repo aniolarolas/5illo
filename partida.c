@@ -155,3 +155,17 @@ void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador *tiradas
 			}
 		}
 }
+void comparar_cartas_jugador(t_jugador jug,t_jugador tirades_posibles,t_jugador *tiradas_escoger){//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
+		k=0;
+		for(j=0;j<tiradas_posibles.cantidad_jugador;i++){
+			for(i=0;i<jug.cantidad_jugador;i++){
+				if(jug.mano[i]==tirada_posibles.mano[j]){
+					l=k+1;
+					printf("%d.[%c%c%c]",l,jug.mano[i].palo,jug.mano[i].numero2,jug.mano[i].numero);
+					tiradas_escoger->mano[k]=jug.mano[i];
+					tiradas_escoger->cantidad_jugador++;
+					k++;
+				}
+			}
+		}
+}
