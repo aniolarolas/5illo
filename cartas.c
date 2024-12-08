@@ -321,7 +321,7 @@ void imprimir_cartas(t_jugador jug1,t_jugador jug2,t_jugador jug3, t_jugador jug
 }
 
 void repartir_cartas(t_jugador *jug1, t_jugador *jug2,t_jugador *jug3,t_jugador *jug4,t_baraja *baraja,t_partida *partida){
-    int i,j,azar,pos_encontrado=0;;
+    int i,j,azar,pos_encontrado=0;
 for(i = 0; i < 10; i++) {
 	for (i = 0; i < 10; i++) {
    
