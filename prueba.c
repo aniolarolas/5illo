@@ -53,7 +53,7 @@ while(Partida==SI){
 
 }
 }
-void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles){//buscar posibles tirades (fer funcio de buscar tirada)
+void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador *tiradas_posibles){//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
 		tirada_posible=NO;
 		for(i=0;i<4;i++){
@@ -97,7 +97,7 @@ void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_
 			}
 		}
 }
-void comparar_cartas_jugador(t_jugador jug,t_jugador tirades_posibles,t_jugador tiradas_escoger){//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
+void comparar_cartas_jugador(t_jugador jug,t_jugador tirades_posibles,t_jugador *tiradas_escoger){//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
 		k=0;
 		for(j=0;j<tiradas_posibles.cantidad_jugador;i++){
 			for(i=0;i<jug.cantidad_jugador;i++){
