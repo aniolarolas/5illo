@@ -3,7 +3,8 @@
 #include "colores.h"
 #include "cartas.h"
 #include "partida.h"
- 
+#define SI 1
+#define NO 0
  
 
 int main(){
@@ -13,7 +14,7 @@ int main(){
     char jug,carta_pregunta,carta_eliminada;
 
 	t_partida partida;
-    t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar;
+    t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar,tiradas_posibles,tiradas_escoger;
    	t_mesa mesa;
     t_baraja baraja;
 
@@ -41,28 +42,18 @@ inicializar_tablero(&mesa,&jug1,&jug2,&jug3,&jug4);
 
 printf("\n");
 
-
-t_baraja baraja2={{{'O', ' ', '1'}, {'O', ' ', '2'}, {'O', ' ', '3'}, {'O', ' ', '4'}, {'O', ' ', '5'}, {'O', ' ', '6'}, {'O', ' ', '7'},
-    {'O', '1', '0'}, {'O', '1', '1'}, {'O', '1', '2'}, {'C', ' ', '1'}, {'C', ' ', '2'}, {'C', ' ', '3'}, {'C', ' ', '4'}, {'C', ' ', '5'}, {'C', ' ', '6'}, {'C', ' ', '7'},
-    {'C', '1', '0'}, {'C', '1', '1'}, {'C', '1', '2'}, {'E', ' ', '1'}, {'E', ' ', '2'}, {'E', ' ', '3'}, {'E', ' ', '4'}, {'E', ' ', '5'}, {'E', ' ', '6'}, {'E', ' ', '7'},
-    {'E', '1', '0'}, {'E', '1', '1'}, {'E', '1', '2'}, {'B', ' ', '1'}, {'B', ' ', '2'}, {'B', ' ', '3'}, {'B', ' ', '4'}, {'B', ' ', '5'}, {'B', ' ', '6'}, {'B', ' ', '7'},
-    {'B', '1', '0'}, {'B', '1', '1'}, {'B', '1', '2'}},40};
-
-
-//Extraer carta al azar de la baraja y verificar que se ha sacado correctamente
-
-k=numero_al_azar(baraja2.cantidad_baraja);
-for(i=k;i<baraja2.cantidad_baraja;i++){
-    baraja2.cartas[i]=baraja2.cartas[i+1];
-}
-baraja2.cantidad_baraja--;
-printf("\n");
-
 Paritda=SI;
 while(Partida==SI){
 	if (turno==1){ //jug1
-	
-		//buscar posibles tirades (fer funcio de buscar tirada)
+		buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles);
+		comparar_cartas_jugador(t_jugador jug1,t_jugador tirades_posibles,t_jugador tiradas_escoger);
+		//case para cada opcion en caso de que sea persona y azar en caso se que sea maquina.
+		turno=turno+1;	
+	}
+}
+
+}
+void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles){//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
 		tirada_posible=NO;
 		for(i=0;i<4;i++){
@@ -72,7 +63,8 @@ while(Partida==SI){
 				posicion_tirada=j;
 			}
 			if(tirada_pos==SI){
-				tiradas_posibles[k]=mesa_auxiliar[i][j];
+				tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+				tiradas_posibles->cantidad_jugador++;
 				k++;
 				tirada_posible=NO;
 			}
@@ -85,7 +77,8 @@ while(Partida==SI){
 					}
 				}
 				if(tirada_posible==SI){
-						tiradas_posibles[k]=mesa_auxiliar[i][j];
+						tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+						tiradas_posibles->cantidad_jugador++;
 						k++;
 						tirada_posible=NO;
 				}
@@ -96,28 +89,25 @@ while(Partida==SI){
 					}
 				}
 				if(tirada_posible==SI){
-					tiradas_posibles[k]=mesa_auxiliar[i][j];
+					tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+					tiradas_posibles->cantidad_jugador++;
 					k++;
 					tirada_posible=NO;
 				}
 			}
 		}
-		//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
+}
+void comparar_cartas_jugador(t_jugador jug,t_jugador tirades_posibles,t_jugador tiradas_escoger){//mirar si el jug te les cartes (fer funcio i donar jug1,jug2,jug3 o jug4 depenent de per qui busquis)
 		k=0;
-		for(j=0;j<tiradas_posibles.numero_cartas;i++){
-			for(i=0;i<jug.numero_cartas;i++){
-				if(jug.cartas[i]==tirada_posibles[j]){
+		for(j=0;j<tiradas_posibles.cantidad_jugador;i++){
+			for(i=0;i<jug.cantidad_jugador;i++){
+				if(jug.mano[i]==tirada_posibles.mano[j]){
 					l=k+1;
-					printf("%d.[%c%c%c]",l,jug.cartas[i].palo,jug.cartas[i].numero2,jug.cartas[i].numero);
-					tiradas_escoger.cartas[k]=jug1.cartas[i];
+					printf("%d.[%c%c%c]",l,jug.mano[i].palo,jug.mano[i].numero2,jug.mano[i].numero);
+					tiradas_escoger->mano[k]=jug.mano[i];
+					tiradas_escoger->cantidad_jugador++;
 					k++;
 				}
 			}
 		}
-
-		//case para cada opcion en caso de que sea persona y azar en caso se que sea maquina.
-		turno=turno+1;	
-	}
-}
-
 }
