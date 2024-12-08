@@ -108,7 +108,50 @@ for (i = 0; i < 10; i++) {
         baraja->cartas[i].numero2=cartas[i].numero2;
         baraja->cartas[i].numero=cartas[i].numero;
     }
-    baraja->cantidad_baraja=40;
+    baraja->cantidad_baraja=40;    
+}
 
-    
+void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador *tiradas_posibles){//buscar posibles tirades (fer funcio de buscar tirada)
+		k=0;
+		tirada_posible=NO;
+		for(i=0;i<4;i++){
+			j=4
+			if(mesa.tablero[i][j].numero=='-'){
+				tirada_posible=SI;
+				posicion_tirada=j;
+			}
+			if(tirada_pos==SI){
+				tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+				tiradas_posibles->cantidad_jugador++;
+				k++;
+				tirada_posible=NO;
+			}
+			else if(mesa.tablero[i][j].numero=!'-'){
+				tirada_pos=NO;
+				for(j=5;j<mesa.columnas;j++){
+					if(tirada_pos==NO && mesa[i][j].numero=='-'){
+						tirada_pososible=SI;
+						posicion_tirada=j;
+					}
+				}
+				if(tirada_posible==SI){
+						tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+						tiradas_posibles->cantidad_jugador++;
+						k++;
+						tirada_posible=NO;
+				}
+				for(j=5;j>mesa.columnas;j--){
+					if(tirada_posible==NO && mesa[i][j].numero=='-'){
+						tirada_posible=SI;
+						posicion_tirada=j;
+					}
+				}
+				if(tirada_posible==SI){
+					tiradas_posibles->mano[k]=mesa_auxiliar[i][j];
+					tiradas_posibles->cantidad_jugador++;
+					k++;
+					tirada_posible=NO;
+				}
+			}
+		}
 }
