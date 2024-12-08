@@ -47,11 +47,11 @@ while(Partida==SI){
 	if (turno==1){ //jug1
 		buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles);
 		comparar_cartas_jugador(t_jugador jug1,t_jugador tirades_posibles,t_jugador tiradas_escoger);
-		//case para cada opcion en caso de que sea persona y azar en caso se que sea maquina.
 		turno=turno+1;	
 	}
 }
 
+}
 }
 void buscar_tirades_posibles(t_mesa mesa,t_mesa mesa_auxiliar,t_jugador tiradas_posibles){//buscar posibles tirades (fer funcio de buscar tirada)
 		k=0;
