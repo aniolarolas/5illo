@@ -12,8 +12,8 @@
 int main(){
 
 	inicializar_azar();
-	int i,j,azar,k,pos_encontrado=0,l,Partida=SI,opcio_escollida;
-	long sec=5;
+	int i,j,azar,k,pos_encontrado=0,l,Partida=SI,opcio_escollida,ganador;
+	long sec=3;
 	char jug,carta_pregunta,carta_eliminada;
 	t_partida partida;
 	t_jugador jug1,jug2,jug3,jug4,jug1_auxiliar,jug2_auxiliar,jug3_auxiliar,jug4_auxiliar,tiradas_posibles,tiradas_escoger;
@@ -66,16 +66,36 @@ if (partida.turno_actual==1){
 			j++;
 		}
 		printf("\nQue tirada realizas? ");
-		scanf("%d%*c",&opcio_escollida);
+		if(jug=='n' || jug=='N'){
+			opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
+			opcio_escollida++;
+			printf("%d\n",opcio_escollida);
+		}
+		else{
+			scanf("%d%*c",&opcio_escollida);
+		}
+		
 		
 		//tira la carta escollida
 		triar_carta(&jug1,&jug1_auxiliar,tiradas_escoger,opcio_escollida,&mesa,mesa_auxiliar);
 	}
+	else{
+		printf("Turno de JUG#1:\n");
+		printf("Paso! Niguna tirada posible :/\n");
+	}
+	if(jug1.cantidad_jugador==0){
+		Partida=NO;
+		partida.turno_actual=5;
+		ganador=1;
+
+	}
+	else{
 	//canvi de torn
-	partida.turno_actual=2;
-	
+	partida.turno_actual=2;}
+
+	printf("\n");
 }
-printf("\n");
+
 //turno jug2
 if (partida.turno_actual==2){ 
 
@@ -104,18 +124,28 @@ if (partida.turno_actual==2){
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
 		opcio_escollida++;
 		printf("%d\n",opcio_escollida);
-	}
-	
+
 	//tira la carta escollida
 	triar_carta(&jug2,&jug2_auxiliar,tiradas_escoger,opcio_escollida,&mesa,mesa_auxiliar);
-	
+	}else{
+		printf("Turno de JUG#2:\n");
+		printf("Paso! Niguna tirada posible :/\n");
+	}
+	if(jug2.cantidad_jugador==0){
+		Partida=NO;
+		partida.turno_actual=5;
+		ganador=2;
+
+	}
+	else{
 	//canvi de torn
-	partida.turno_actual=3;
+	partida.turno_actual=3;}
 	
 	//espera 5sec para continuar
 	duerme_n_segundos(sec);
+	printf("\n");
 }
-printf("\n");
+
 //turno jug3
 if (partida.turno_actual==3){ 
 	
@@ -142,20 +172,31 @@ if (partida.turno_actual==3){
 		}
 		printf("\nQue tirada realizas? ");
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
-		opcio_escollida++;
+		opcio_escollida++;			
 		printf("%d\n",opcio_escollida);
-	}
-	
+
 	//tira la carta escollida
 	triar_carta(&jug3,&jug3_auxiliar,tiradas_escoger,opcio_escollida,&mesa,mesa_auxiliar);
-	
+
+	}else{
+		printf("Turno de JUG#3:\n");
+		printf("Paso! Niguna tirada posible :/\n");
+	}
+	if(jug3.cantidad_jugador==0){
+		Partida=NO;
+		partida.turno_actual=5;
+		ganador=3;
+
+	}
+	else{
 	//canvi de torn
-	partida.turno_actual=4;
+	partida.turno_actual=4;}
 	
 	//espera 5sec para continuar
 	duerme_n_segundos(sec);
+	printf("\n");
 }
-printf("\n");
+
 //turno jug4
 if (partida.turno_actual==4){ 
 	
@@ -184,7 +225,24 @@ if (partida.turno_actual==4){
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
 		opcio_escollida++;
 		printf("%d\n",opcio_escollida);
+
+		//tira la cartas escollida
+		triar_carta(&jug4,&jug4_auxiliar,tiradas_escoger,opcio_escollida,&mesa,mesa_auxiliar);
+
+		}else{
+		printf("Turno de JUG#4:\n");
+		printf("Paso! Niguna tirada posible :/\n");}
+	
+	if(jug4.cantidad_jugador==0){
+		Partida=NO;
+		partida.turno_actual=5;
+		ganador=4;
+
 	}
+	else{
+	//canvi de torn
+	partida.turno_actual=1;}
+	
 	
 	//tira la carta escollida
 	triar_carta(&jug4,&jug4_auxiliar,tiradas_escoger,opcio_escollida,&mesa,mesa_auxiliar);
@@ -194,8 +252,9 @@ if (partida.turno_actual==4){
 	
 	//espera 5sec para continuar
 	duerme_n_segundos(sec);
-}
-printf("\n");
-}
+	printf("\n");
+}}
+
+printf("Partida finalizada, HA GANADO EL JUGADOR #%d\n",ganador);
 }
 
