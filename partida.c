@@ -178,8 +178,8 @@ void triar_carta(t_jugador *jug, t_jugador *jug_aux, t_jugador tiradas_escoger, 
 			jug_aux->cantidad_jugador--;
 		}
 	}
-	for(i=0;i<mesa_auxiliar.cantidad_filas;i++){
-		for(j=0;j<mesa_auxiliar.cantidad_columnas;j++){
+	for(j=0;j<mesa_auxiliar.cantidad_filas;j++){
+		for(i=0;i<mesa_auxiliar.cantidad_columnas;i++){
 			if(mesa_auxiliar.tablero[j][i].palo==tiradas_escoger.mano[opcio_escollida-1].palo && mesa_auxiliar.tablero[j][i].numero2==tiradas_escoger.mano[opcio_escollida-1].numero2 && mesa_auxiliar.tablero[j][i].numero==tiradas_escoger.mano[opcio_escollida-1].numero){
 				mesa->tablero[j][i]=tiradas_escoger.mano[opcio_escollida-1];
 			}
