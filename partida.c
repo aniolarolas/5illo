@@ -78,26 +78,26 @@ void inicializar_partida(t_jugador *jug1,t_jugador *jug2,t_jugador *jug3,t_jugad
 //Inicializamos la matriz de jug[i]_auxiliar a traves de fors
 jug1_auxiliar->cantidad_jugador = 10;
 for (i = 0; i < 10; i++) {
-    jug1_auxiliar->mano[i].palo = '-';
-    jug1_auxiliar->mano[i].numero = '-';
+    jug1_auxiliar->mano[i].palo = '?';
+    jug1_auxiliar->mano[i].numero = '?';
     jug1_auxiliar->mano[i].numero2 = ' ';
 }
 jug2_auxiliar->cantidad_jugador = 10;
 for (i = 0; i < 10; i++) {
-    jug2_auxiliar->mano[i].palo = '-';
-    jug2_auxiliar->mano[i].numero = '-';
+    jug2_auxiliar->mano[i].palo = '?';
+    jug2_auxiliar->mano[i].numero = '?';
     jug2_auxiliar->mano[i].numero2 = ' ';
 }
 jug3_auxiliar->cantidad_jugador = 10;
 for (i = 0; i < 10; i++) {
-    jug3_auxiliar->mano[i].palo = '-';
-    jug3_auxiliar->mano[i].numero = '-';
+    jug3_auxiliar->mano[i].palo = '?';
+    jug3_auxiliar->mano[i].numero = '?';
     jug3_auxiliar->mano[i].numero2 = ' ';
 }
 jug1_auxiliar->cantidad_jugador = 10;
 for (i = 0; i < 10; i++) {
-    jug4_auxiliar->mano[i].palo = '-';
-    jug4_auxiliar->mano[i].numero = '-';
+    jug4_auxiliar->mano[i].palo = '?';
+    jug4_auxiliar->mano[i].numero = '?';
     jug4_auxiliar->mano[i].numero2 = ' ';
 }
 	
