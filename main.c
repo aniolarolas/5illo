@@ -62,15 +62,15 @@ if (partida.turno_actual==1){
 		printf("Turno de JUG#1:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tirada_escoger.numero=='O'){
+			if(tiradas_escoger.numero=='O'){
 			printf_color_num(3);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='C'){
+		}else if(tiradas_escoger.numero=='C'){
 			printf_color_num(1);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='E'){
+		}else if(tiradas_escoger.numero=='E'){
 			printf_color_num(4);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
@@ -131,15 +131,15 @@ if (partida.turno_actual==2){
 		printf("Turno de JUG#2:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tirada_escoger.numero=='O'){
+			if(tiradas_escoger.numero=='O'){
 			printf_color_num(3);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='C'){
+		}else if(tiradas_escoger.numero=='C'){
 			printf_color_num(1);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='E'){
+		}else if(tiradas_escoger.numero=='E'){
 			printf_color_num(4);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
@@ -196,15 +196,15 @@ if (partida.turno_actual==3){
 		printf("Turno de JUG#3:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tirada_escoger.numero=='O'){
+			if(tiradas_escoger.numero=='O'){
 			printf_color_num(3);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='C'){
+		}else if(tiradas_escoger.numero=='C'){
 			printf_color_num(1);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='E'){
+		}else if(tiradas_escoger.numero=='E'){
 			printf_color_num(4);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
@@ -262,15 +262,15 @@ if (partida.turno_actual==4){
 		printf("Turno de JUG#4:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tirada_escoger.numero=='O'){
+			if(tiradas_escoger.numero=='O'){
 			printf_color_num(3);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='C'){
+		}else if(tiradas_escoger.numero=='C'){
 			printf_color_num(1);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tirada_escoger.numero=='E'){
+		}else if(tiradas_escoger.numero=='E'){
 			printf_color_num(4);
 			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
