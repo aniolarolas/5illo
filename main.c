@@ -62,23 +62,25 @@ if (partida.turno_actual==1){
 		printf("Turno de JUG#1:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tiradas_escoger.numero=='O'){
+			printf("%d: ",j);
+		if(tiradas_escoger.mano[i].palo=='O'){
 			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo,  tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='C'){
+		}else if(tiradas_escoger.mano[i].palo=='C'){
 			printf_color_num(1);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='E'){
+		}else if(tiradas_escoger.mano[i].palo=='E'){
 			printf_color_num(4);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
 		}else{
-			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf_color_num(2);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}}
+		}printf_reset_color();
+		}printf_reset_color();
 		printf("\nQue tirada realizas? ");
 		if(jug=='n' || jug=='N'){
 			opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
@@ -130,26 +132,26 @@ if (partida.turno_actual==2){
 	if(tiradas_escoger.cantidad_jugador != 0){
 		printf("Turno de JUG#2:\nTirades posibles: ");
 		j=1;
-		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tiradas_escoger.numero=='O'){
+	for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
+			printf("%d: ",j);
+		if(tiradas_escoger.mano[i].palo=='O'){
 			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo,  tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='C'){
+		}else if(tiradas_escoger.mano[i].palo=='C'){
 			printf_color_num(1);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='E'){
+		}else if(tiradas_escoger.mano[i].palo=='E'){
 			printf_color_num(4);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
 		}else{
-			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf_color_num(2);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}
-		}
-		printf("\nQue tirada realizas? ");
+		}printf_reset_color();
+		}printf_reset_color();
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
 		opcio_escollida++;
 		printf("%d\n",opcio_escollida);
@@ -196,24 +198,25 @@ if (partida.turno_actual==3){
 		printf("Turno de JUG#3:\nTirades posibles: ");
 		j=1;
 		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tiradas_escoger.numero=='O'){
+	printf("%d: ",j);
+		if(tiradas_escoger.mano[i].palo=='O'){
 			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo,  tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='C'){
+		}else if(tiradas_escoger.mano[i].palo=='C'){
 			printf_color_num(1);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='E'){
+		}else if(tiradas_escoger.mano[i].palo=='E'){
 			printf_color_num(4);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
 		}else{
-			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf_color_num(2);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}
-		}
+		}printf_reset_color();
+		}printf_reset_color();
 		printf("\nQue tirada realizas? ");
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
 		opcio_escollida++;			
@@ -261,25 +264,26 @@ if (partida.turno_actual==4){
 	if(tiradas_escoger.cantidad_jugador != 0){
 		printf("Turno de JUG#4:\nTirades posibles: ");
 		j=1;
-		for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
-			if(tiradas_escoger.numero=='O'){
+	for (i=0;i<tiradas_escoger.cantidad_jugador;i++){
+		printf("%d: ",j);
+		if(tiradas_escoger.mano[i].palo=='O'){
 			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo,  tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='C'){
+		}else if(tiradas_escoger.mano[i].palo=='C'){
 			printf_color_num(1);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}else if(tiradas_escoger.numero=='E'){
+		}else if(tiradas_escoger.mano[i].palo=='E'){
 			printf_color_num(4);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
 		}else{
-			printf_color_num(3);
-			printf("%d:  [%c%c%c] ",j,tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
+			printf_color_num(2);
+			printf("[%c%c%c] ",tiradas_escoger.mano[i].palo, tiradas_escoger.mano[i].numero2,tiradas_escoger.mano[i].numero);
 			j++;
-		}
-		}
+		}printf_reset_color();
+		}printf_reset_color();
 		printf("\nQue tirada realizas? ");
 		opcio_escollida = numero_al_azar(tiradas_escoger.cantidad_jugador);
 		opcio_escollida++;
@@ -316,4 +320,3 @@ if (partida.turno_actual==4){
 
 printf("Partida finalizada, HA GANADO EL JUGADOR #%d\n",ganador);
 }
-
